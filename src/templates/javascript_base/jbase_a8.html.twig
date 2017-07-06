@@ -1,0 +1,100 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Branchements conditionnels </h3>
+			<p>
+				Nous allons maintenant étudier une structure fondamentale en programmation le « si …... alors.......sinon........».
+			</p>
+			<p>
+				L'idée de base est la suivante :
+			</p>
+			<pre><code>si (condition) {
+ suite_instruction1
+}
+sinon {
+ suite_instruction2
+}</code></pre>
+			<p>
+				Comment cela fonctionne-t-il ?
+			</p>
+			<p>
+				<strong>Si</strong> « condition » est true alors « suite_instruction1 » est exécuté et « suite_instruction2 » est ignoré
+				<strong>sinon</strong> (sous-entendu que « condition » est false) « suite_instruction2 » est exécuté et « suite_instruction1 » est ignoré
+			</p>
+			<p>
+				Notez l'utilisation de 2 éléments nouveaux :
+			</p>
+			<ul>
+				<li>les accolades : elles permettent de définir des blocs d'instructions : si « suite_instruction1 » est composé de plusieurs lignes, toutes les lignes situées entre l'accolade ouvrante et l'accolade fermante seront exécutées si, bien évidemment,
+				« condition » renvoie true.</li>
+				<li>Le décalage de «suite_instruction1» et de « suite_instruction2» : ce décalage est appelé indentation, il permet de rendre le code plus lisible.
+				Il n'est pas obligatoire en JavaScript, mais fortement conseillé. </li>
+			</ul>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">var a=4;
+var b=7;
+if (a&ltb){
+ document.write('Je suis toto.');
+ document.write( '&ltbr/&gt');
+ document.write( "Je n'aime pas titi.");
+}
+else {
+ document.write( 'Je suis titi.');
+ document.write('&ltbr/&gt');
+ document.write( "Je n'aime pas toto.");
+}
+document.write('&ltbr/&gt');
+document.write( "En revanche, j'aime le JavaScript.");</code></pre>
+			<p>
+				Notez la présence des guillemets " à la place de l'apostrophe '. Pourquoi d'après vous ?
+			</p>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="condition_1"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<p>
+				Vous allez maintenant écrire un programme qui demande l'âge de l'utilisateur. Si l'utilisateur a 18 ans ou plus, le programme devra afficher « Bonjour, vous êtes majeur.».
+				Si l'utilisateur a moins de 18 ans,  le programme devra afficher « Bonjour, tu es mineur.»
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="condition_2"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+		</div>
+		<div class='cours conclusion'>
+			<h4>
+				En résumé
+			</h4>
+			<p>
+				Un programme peut exécuter des instructions différentes suivant les données qu'il a. Ce branchement conditionnel se fait grâce à la structure suivante :
+			</p>
+			<pre><code>si (condition) {
+ suite_instruction1
+}
+sinon {
+ suite_instruction2
+}</code></pre>
+	</div>
+</div>
+{% endblock %}

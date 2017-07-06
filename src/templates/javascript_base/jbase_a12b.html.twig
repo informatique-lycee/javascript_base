@@ -1,0 +1,143 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Tableaux : manipulations </h3>
+		<h4> Ajouter en fin de tableau </h4>
+		<p>
+			Une fois notre tableau créé, il est intéressant de pouvoir ajouter ou supprimer simplement un élément. Pour créer un élément, 
+			on a vu que l'on pouvait utiliser la notation avec la position. Par exemple, pour ajouter l'élément "orange" en 5ème position d'un tableau, 
+			on peut écrire
+		</p>
+		<pre><code class='javascript'>monTableau[4]="orange";</code></pre>
+		<p>
+			<em>Vous remarques bien que le 5ème élément a pour indice 4 : on commence à 0</em>
+		</p>
+		<p>
+			Ce qui n'est pas très pratique, c'est qu'il faut savoir en permanence où l'on en est au niveau des indices. Il y a une solution. 
+			Un tableau est un objet (on en reparlera plus tard) et il y a une propriété du tableau qui est accessible facilement : sa longueur.
+			Si le tableau s'appelle <code>monTableau</code>, sa longueur est contenue dans la vairable notée <code>monTableau.length</code>. 
+			À votre avis, que va faire le code suivant ? (<em>P.S. n'oubliez où commence les indices...</em>)
+		</p>
+		<pre><code class="javascript">var monTableau=[&#039;pomme&#039;,&#039;poire&#039;,&#039;pruneau&#039;,&#039;mangue&#039;];
+document.write(&#039;longueur du tableau : &#039;+monTableau.length);
+document.write(&#039;&lt;br&gt;&#039;);
+monTableau[monTableau.length]=&#039;kiwi&#039;;
+document.write(&#039;longueur du tableau : &#039;+monTableau.length);</code></pre>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_b1"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				Vérifier
+			</button>
+		</div>
+	</div>
+	<div class="cours remarque">
+			<p>
+				<strong>Remarque : </strong>Pour information, en javascript, la taille d'un tableau peut évoluer au cours de son utilisation. Ce n'est pas le cas 
+				pour tous les langages. Dans certains langages, la taille du tableau est fixée et ne peut plus varier.
+			</p>
+	</div>
+	<div class="cours">
+		<h4>
+			Ajouter plus simplement.
+		</h4>
+		<p>
+			Il existe une façon plus simple d'ajouter un élément à la fin d'un tableau.  En tant qu'objet, un tableau a des fonctions
+			qui lui sont associées (on appelle cela des méthodes pour un objet). Une en particulier est la méthode <code>push()</code>
+			qui permet d'ajouter un élément à la fin d'un tableau. Par exemple, pour reprendre l'exemple précédent, ajouter "orange" à la fin 
+			du tableau s'écrit
+		</p>		
+		<pre><code class='javascript'>monTableau.push("orange");</code></pre>
+		<p>
+			Vous allez maintenant écrire un programme qui stocke dans un tableau les carrés des nombres de 1 à 12. Pour cela, vous utiliserez la méthode 
+			<code>push</code> et une boucle (for ou while, à votre choix)
+		</p>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_b2"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				À faire vous même
+			</button>
+		</div>
+	</div>
+	<div class="cours">
+		<h4>
+			Supprimer un élément ?
+		</h4>
+		<p>
+			Bien entendu, il est aussi supprimer un élément. La façon la plus simple de faire est de supprimer le dernier élément du tableau. Pour cela, nous utiliserons la 
+			méthode <code>pop()</code> de l'objet tableau. Pas besoin de paramètre, c'est le dernier que l'on enlève.
+		</p>
+		<pre><code class="javascript">monTableau.pop();</code></pre>
+		<p>
+			À votre avis, que fait le code suivant :
+		</p>
+		<pre><code class="javascript">var protections=['coque du vaisseau','bouclier énergétique','mega bouclier'];
+
+while (protections.length >0 ) {
+	document.write("Votre meilleure protection est : "+protections[protections.length-1]);
+	document.write("&lt;br&gt; ZAAAAAPPPPP ! &lt;br&gt;");
+	protections.pop();
+}
+
+document.write("votre vaisseau a été détruit !");</code></pre>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_b3"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				Vérifier
+			</button>
+		</div>
+	</div>
+	<div class="cours">
+		<h4> Supprimer des élément ... n'importe où ... et en ajouter !</h4>
+		<p> Souvent, ajouter un élément peut se faire à n'importe quel endroit et la méthode <code>push()</code> va très bien.
+			Mais on veut souvent supprimer un élément en particulier. Il existe une
+			méthode pour cela dont la syntaxe est un peu plus complexe: la méthode <code>splice()</code>. La syntaxe est la suivante 
+		</p>
+		<pre><code class='javascript'>monTableau.splice(debut,nbSuppression);</code></pre>
+		<ul>
+			<li>
+				le premier paramètre (debut) indique la position à partir de laquelle on veut effectuer des suppression
+			</li>
+			<li>
+				le second paramètre (nbSuppression) indique le nombre d'éléments que l'on veut supprimer.
+			</li>
+		</ul>
+		<p>
+			Si l'ordre a de l'importance et que l'on veut ajouter un élément à une position déterminée, on peut encore utiliser la méthode
+			<code>splice()</code>. Elle peut en effet prendre 2 paramètres ... ou plus. La syntaxe générale est 
+		</p>
+		<pre><code class='javascript'>monTableau.splice(debut,nbSuppression,element1,element2,.....);</code></pre>
+		<p>
+			<strong>element1, element2, ...</strong> sont les éléments que l'on veut rajouter. Ils sont ajoutés à partir de la position indiquée
+			par le paramètre debut.
+		</p>
+		<p>
+			Un programmeur maladroit qui ne connaissait pas les couleurs de l'arc en ciel a mal rempli son tableau. Corrigez cela avec la fonction splice (en une ou plusieurs fois)
+		</p>
+		<pre><code class="javascript">var arc_en_ciel=['rouge','orange','jaune','bleu','vert','violet'];</code></pre>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_b4"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				À faire vous même
+			</button>
+		</div>
+	</div>
+</div>
+{% endblock %}

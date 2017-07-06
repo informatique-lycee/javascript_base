@@ -1,0 +1,94 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Opérations </h3>
+			<p>
+				Un ordinateur est bien évidemment capable d'effectuer des opérations mathématiques (arithmétiques).
+				Les signes utilisés sont classiques : +, - , * (multiplication), / (division) ou encore % (modulo : reste d'une division).
+				Il est tout à fait possible d'effectuer des opérations directement avec des nombres, mais il est aussi possible d'utiliser des variables.
+			</p>
+	</div>
+	<div class="cours afaire">
+			<p>
+				Vous allez écrire un programme pour faire les opérations mathématique de base : addition et division.
+			</p>
+
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="operations_1"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+	</div>
+	<div class="cours afaire">
+			<p>
+				D'après vous, que fait ce programme ?
+			</p>
+			<pre><code class="javascript">
+var a;
+a=11;
+document.write(a);
+document.write('&ltbr/&gt');
+a=a+1;
+document.write(a);
+			</code></pre>
+			<p>
+				Remarque : La ligne « document.write('&ltbr/&gt');» est uniquement là pour permettre un retour à la ligne.
+			</p>
+						<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="operations_2"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+					Vérifier votre réponse
+				</button>
+			</div>
+</div>
+<div class="cours">			
+			<hr>
+			<p>
+				Détaillons ce qui se passe dans le programme précédent :
+			</p>
+			<ul>
+				<li>nous créons une variable a et nous lui attribuons la valeur 11</li>
+				<li>nous affichons à l'écran la valeur de a (c'est à dire 11)</li>
+			</ul>
+			<p>
+				La suite est un peu plus complexe, mais très importante à comprendre. Il va falloir lire la ligne "a=a+1;" de droite à gauche, décortiquons cette ligne :
+			</p>
+			<ul>
+				<li>a+1 : nous prenons la valeur actuelle de a (c'est-à-dire 11) et nous lui ajoutons 1, à droite de l'égalité nous avons donc maintenant la valeur 12.</li>
+				<li>nous attribuons la valeur qui vient d'être calculée à la variable a (donc maintenant a=12)</li>
+				<li>nous affichons à l'écran la nouvelle valeur de a</li>
+			</ul>
+			<p>
+				Ce raisonnement peut être généralisé pour éviter des erreurs parfois difficiles à corriger :
+			</p>
+			<p>
+				<strong>Dans une égalité, commencer toujours par évaluer l'expression se trouvant à droite du signe égal.</strong>
+			</p>
+    </div>
+    <div class="cours conclusion">
+    	<h4>En résumé</h4>
+    	<ul>
+    		<li>
+    			On peut effectuer des opérations mathématiques sur les nombres ou les variables avec + - x / et % (le modulo)
+    		</li>
+    		<li>
+    			une expression d'affection est évaluée du côté droit puis stocké sur le côté gauche 
+    			<pre><code class='javascript'>a=a+1</code></pre>
+    			va donc rajouter 1 au contenu de la valeur a
+    		</li>
+    	</ul>
+    </div>
+</div>
+{% endblock %}
+	

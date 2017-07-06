@@ -1,0 +1,152 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Programmation objet </h3>
+			<p>
+				JavaScript est un langage orienté objet, nous allons donc avoir à manipuler des "objets informatiques". Les objets informatiques ressemblent beaucoup aux objets de la vie de tous les jours, c'est d'ailleurs un peu l'intérêt de la chose.
+			</p>
+			<p>
+				En JavaScript, un objet est un conteneur qui contient des propriétés ! Qu'est-ce que des propriétés ?
+			</p>
+			<p>
+				Cela peut être beaucoup de choses, mais nous allons nous limiter à 3 choses :
+			</p>
+			<ul>
+				<li>une propriété peut-être un attribut, pour faire simple, un attribut est une variable propre à  un objet.</li>
+				<li>Une propriété peut-être une méthode, une méthode est une fonction qui agit sur notre objet.</li>
+				<li>Une propriété peut-être un autre objet (nous ne verrons pas d'exemple ici, il faut juste que vous sachiez que cela existe).</li>
+			</ul>
+			<p>
+				Prenons un objet de la vie courante et "transformons-le" en objet JavaScript :
+			</p>
+			<p>
+				Une voiture a une marque et une couleur (entre autres) et bien "marque" et "couleur" seront des attributs de notre objet JavaScript voiture.
+				Une voiture peut accélérer, freiner, tourner..... et bien "freiner", "accélérer" et "tourner" seront des méthodes de notre objet JavaScript voiture.
+			</p>
+			<p>
+				Il existe différentes façons de créer des objets en JavaScript. Par souci de simplicité, nous n'en verrons qu'une seule en détail.
+			</p>
+			<pre><code class="javascript">
+monObjet = { attribut_1 : valeur_1, attribut_2 : valeur_2, method : function(){.....}}
+			</code></pre>
+			<p>
+				Souvent, pour améliorer la lecture, nous écrirons notre objet comme cela :
+			</p>
+			<pre><code class="javascript">
+monObjet = {
+ attribut_1 : valeur_1,
+ attribut_2 : valeur_2,
+ methode_1 : function(){
+ .....
+}
+}
+			</code></pre>
+			<p>
+				Pour « utiliser » notre objet, nous utiliserons la « notation pointée » :
+			</p>
+			<p>monObjet.attribut_1 (nous avons ici l'équivalent d'une variable ayant pour valeur valeur_1)</p>
+			<p>monObjet.methode_1() (permets d'utiliser la méthode « methode_1 »  de l'objet monObjet.</p>
+			<p>
+				Comme pour une fonction, il est tout à fait possible d'utiliser des paramètres avec une méthode :
+			</p>
+			<pre><code class="javascript">
+monObjet = {
+ attribut_1 : valeur_1,
+ attribut_2 : valeur_2,
+ methode_1 : function(a,b){
+ }
+}
+			</code></pre>
+			<h4>À faire vous même 14.1</h4>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">
+maVoiture = {
+ marque : 'Peugeot',
+ couleur : 'rouge',
+ annee : 2012,
+ accelere : function(){
+  document.write('La voiture accélère') ;
+  document.write('&ltbr/&gt') ;
+ },
+ limiteur : function(vLimite){
+  document.write('Le limiteur de vitesse est réglé sur ') ;
+  document.write(vLimite);
+  document.write(' km/h.')
+  document.write('&ltbr/&gt') ;
+ }
+}
+document.write('Je possède une voiture de marque ') ;
+document.write(maVoiture.marque) ;
+document.write(' ,elle est ') ;
+document.write(maVoiture.couleur) ;
+document.write(". Je l'ai achetée en ") ;
+document.write(maVoiture.annee) ;
+document.write('&ltbr/&gt') ;
+maVoiture.accelere() ;
+maVoiture.limiteur(130) ;
+			</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? Vérifiez votre réponse à l'aide de JSFIDDLE.
+			</p>
+			<hr>
+			<p>
+					Il est possible de modifier un attribut :
+			</p>
+<pre><code class="javascript">
+maVoiture = {
+ marque : 'Peugeot',
+ couleur : 'rouge',
+ annee : 2012
+}
+document.write("Ma voiture est ") ;
+document.write(maVoiture.couleur) ;
+maVoiture.couleur='verte' ;
+document.write('&ltbr/&gt') ;
+document.write("Maintenant elle est ") ;
+document.write(maVoiture.couleur) ;
+</code></pre>
+<p>
+	Il est même possible d'ajouter un attribut ou une méthode un objet :
+</p>
+<pre><code class="javascript">
+maVoiture = {
+ marque : 'Peugeot',
+ couleur : 'rouge',
+}
+maVoiture.freine=function() {
+ document.write('La voiture freine') ;
+ document.write('&ltbr/&gt') ;
+}
+maVoiture.couleur='verte' ;
+maVoiture.freine() ;
+document.write("Ma voiture est ") ;
+document.write(maVoiture.couleur) ;
+</code></pre>
+		<p>
+				Il est donc tout à fait possible de créer un objet vide (monObjet={}) et de le « remplir » ensuite.
+		</p>
+		<p>
+			Comme déjà dit plus haut, il existe une autre méthode pour créer des objets, je vous donne ci-dessous un exemple pour que vous ne soyez pas surpris si vous la rencontrez.
+		</p>
+		<pre><code class="javascript">
+Voiture =function() {
+ this.marque='Peugeot' ;
+ this.couleur='verte' ;
+ this.freine=function(){
+  document.write('La voiture freine') ;
+  document.write('&ltbr/&gt') ;
+ }
+}
+maVoiture=new Voiture() ;
+maVoiture.freine() ;
+document.write("Ma voiture est ") ;
+document.write(maVoiture.couleur) ;
+		</code></pre>
+		<p>Nous avons ici défini 2 attributs ("marque" et "couleur") et une méthode ("freine). Le mot-clé "this" doit toujours précéder les attributs et les méthodes dans la définition des objets.</p> 
+	</div>
+</div>
+{% endblock %}

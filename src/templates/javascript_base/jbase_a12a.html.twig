@@ -1,0 +1,85 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Tableaux : déclarations </h3>
+		<h4> Créer un tableau </h4>
+			<p>
+				Les tableaux vont nous permettre de stocker plusieurs valeurs (chaîne, nombre) dans une structure unique. Si on peut comparer une variable
+				à une boite de rangement dans laquelle on peut stocker de l'information, un tableau sera lui une étagère dans laquelle vous mettez vos 
+				boites de rangement.
+			</p>
+			<p>
+				Pour déclarer un tableau, la syntaxe est un peu particulière :
+			</p>
+			<pre><code class="javascript">var monTableau = [];</code></pre>
+			<p>
+			Ensuite, pour remplir le tableau il faut procéder comme suit :
+			</p>
+			<pre><code class="javascript">monTableau [indice de position] = maValeur</code></pre>
+			<p>
+				exemples :
+			</p>
+			<pre><code class="javascript">monTableau [0] = "pomme" ;
+monTableau [1] = "orange" ;</code></pre>
+			<p>
+				Un tableau peut contenir tout type de variables, chaines, nombres, etc...
+			</p>
+			<pre><code class="javascript">monTableau [0] = 15 ;
+monTableau [1] = "Une phrase" ;</code></pre>
+			<div class="alert alert-warning">
+				<h5>Attention !</h5> 
+				<p>L'indice de position commence toujours à zéro. Vous pouvez voir ça comme les étages d'un immeuble. 
+					On commence au rez de chaussée (étage 0) pour poursuivre avec l'étage 1 puis 2.
+				</p>
+			</div>
+			<p>
+				Il est aussi possible de déclarer et de remplir le tableau en même temps :
+			</p>
+			<pre><code class="javascript">var monTableau = ["pomme","orange"] ;</code></pre>
+		</div>
+		<div class="cours">
+			<h4>Accéder au contenu d'un tableau</h4>
+            <p>Pour accéder contenu d'un tableau, il suffit d'utiliser la syntaxe suivante :</p>
+            <pre><code class="javascript">monTableau[x]</code></pre>
+            <p> avec x l'indice de position de l'élément que vous voulez lire.</p>
+            <p> 
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">var monTableau = ["pomme","orange","poire"];
+document.write (monTableau[1]);</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="array_a1"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+		</div>
+		<div class='cours'>
+			<h4> les mois de l'année </h4>
+			<p>
+				Écrire un programme qui demande à l'utilisateur un numéro de mois (de 1 à 12), puis affiche :
+				« Vous avez sélectionné le mois de : xxxxxx » (avec xxxxxx janvier si l'utilisateur a choisi 1, août si l'utilisateur a choisi 8,...).
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="array_a2"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+		</div>
+</div>
+{% endblock %}

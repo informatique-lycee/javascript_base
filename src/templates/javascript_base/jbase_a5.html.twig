@@ -1,0 +1,78 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Concaténation </h3>
+			<p>
+				L'utilisation du signe + ne se limite pas à l'addition. Il est aussi utilisé pour la concaténation.
+			</p>
+			<p>
+				D'après Wikipédia :
+			</p>
+			<p>
+				<i>Le terme concaténation (substantif féminin), du latin cum (« avec ») et catena (« chaîne, liaison »), désigne l'action de mettre bout à bout au moins deux chaînes.</i>
+			</p>
+			<p>
+				Comme vous avez pu le deviner en lisant la définition ci-dessus, la concaténation va concerner les chaines de caractères.
+			</p>
+			<p>
+				À votre avis, qu'est ce que le programme ci-dessous va permettre d'afficher à l'écran ? Vérifiez votre réponse.
+			</p>
+			<pre><code class="javascript">var a="Hello";
+var b=" World";
+var monExpression=a+b;
+document.write(monExpression);</code></pre>
+				<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="concatenation"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier votre réponse
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<p>
+				Vous noterez dans l'exemple précédent qu'il a bien fallu mettre un espace dans la seconde chaine de caractère pour séparer les mots.
+			</p>
+			<p>
+				On peut donc, avec le signe + ajouter deux nombres, ou encore concaténer deux chaines de caractères. Mais que se passerait il si nous 
+				utilisions le signe + avec un nombre et une chaine de caractère ? 
+			</p>
+			<p>
+				Considérons une variable maChaine qui contient une chaine de caractère, une variable monNombre qui contient un nombre. Que donnerait
+				le code suivant ? Faites vous même l'essai. 
+			</p>
+			<pre><code class="javascript">var resultat = maChaine + monNombre </code></pre>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="transtypage"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même.
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<p>
+				Nous avons eu une concaténation. La variable <code>resultat</code> est de type string. JavaScript a transformé le "number" en "string" pour pouvoir effectuer une concaténation (l'addition étant impossible à réaliser) :
+				on parle de "transtypage automatique" <em>(transtypage : transformation du type)</em>. Le programmeur peut "forcer" un transtypage, nous y reviendrons plus tard.
+			</p>
+    </div>
+    <div class="cours conclusion">
+    	<h4>À retenir</h4>
+    	<p>
+    		L'opérateur + permet d'ajouter deux nombres mais aussi de concaténer (mettre bout à bout) deux chaines de caractères
+    	</p>
+    	<p>
+    		Si on utilise l'opérateur + pour un nombre est une chaine de caractère, le nombre est converti en chaine de caractère 
+    		(transtypage) puis les deux chaines sont concaténées.
+    	</p>
+    </div>
+</div>
+{% endblock %}

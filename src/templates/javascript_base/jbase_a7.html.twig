@@ -1,0 +1,215 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Tests </h3>
+			<p>
+				Si quelqu'un vous dit que « 4 est égal à 5 », vous lui répondez quoi ?
+				« C'est faux ». Si maintenant la même personne vous dit que « 7 est égal à 7 », vous lui répondrez bien évidemment que « c'est vrai ».
+			</p>
+			<p>
+				En JavaScript, ces deux « affirmations » (« 4 est égal à 5 » et « 7 est égal à 7 ») s'écriront « 4 == 5 » et « 7 == 7 » (notez bien le double signe égal).
+			</p>
+			<p>
+				À votre avis, que va faire le programme suivant ?
+			</p>
+			<pre><code class="javascript">document.write(4==5);</code></pre>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_1"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<p>
+				À votre avis, quel sera le résultat après l’exécution de ce programme ?
+			</p>
+			<pre><code class="javascript">document.write(7==7);</code></pre>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_2"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+
+	<div class="cours">			
+		<p>
+				Le « double égal » (==) est l'opérateur d'égalité. L'opérateur d'égalité renvoit soit vrai (true) soit faux (false).
+				L'utilisation de l'opérateur d'égalité va prendre tout son sens avec des variables.
+			</p>
+			<div class='alert alert-danger'>
+							<p><strong>
+				ATTENTION :</strong> Il ne faut pas confondre l'opérateur d'égalité (==) et l'opérateur d'affectation (=) utilisé pour attribuer une valeur aux variables.
+				La confusion entre ces 2 opérateurs est une erreur classique qu'il est parfois très difficile à détecter !
+			</p>
+			</div>
+		</div>
+		<div class="cours">
+			<p>
+				Considérons le programme suivant :
+			</p>
+			<pre><code class="javascript">var a=4;
+var b=7;
+document.write(a==b) ;
+document.write('&lt;br/&gt;');
+a=7;
+document.write(a==b);</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_3"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4> La différence </h4>
+			<p>
+				Il est possible d'utiliser aussi l'opérateur « différent de » !=
+			</p>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">var a=4;
+var b=7;
+document.write(a!=b);
+document.write('&lt;br&gt;');
+a=7;
+document.write(a!=b) ;</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_4"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">			
+			<p>
+				Notez aussi l’existence des opérateurs :
+			</p>
+			<div class="alert alert-info">
+			<ul>
+				<li> &lt;   «strictement inférieur à » </li>
+				<li> &gt;   «strictement supérieur à » </li>
+				<li> &lt;=   « inférieur ou égal à » </li>
+				<li> &gt;=   « supérieur ou égal à » </li>
+			</ul>
+		</div>
+			<p>
+				À chaque fois ces opérateurs renvoient <code>true</code> (vrai) ou <code>false</code> (faux).
+			</p>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">var a=4;
+var b=4;
+document.write(a&lt;b) ;
+document.write('&lt;br&gt;');
+a=7;
+document.write(a&lt;b) ;</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_5"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>			
+	<div class="cours">
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">var a=14;
+var b=7;
+document.write(a&gt;=b) ;
+document.write('&lt;br&gt;');
+a=7;
+document.write(a&gt;=b) ;</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_6"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class='javascript'>var a=4;
+var b=7;
+document.write(a&gtb) ;
+document.write('&ltbr/&gt');
+a=9;
+document.write(a&gtb);</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ?
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="boolean_7"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">		
+			<h4> Le type </h4>
+			<p>
+				Pour terminer, notez qu'une variable qui ne peut contenir que true ou false est de type booléen.
+			</p>
+    </div>
+    <div class="cours conclusion">
+    	<h4>En résumé</h4>
+    	<ul>
+    		<li>
+    			Il existe un autre type de variable, le type <strong>boolean</strong> (<em>booléen en français</em>) qui peut prendre seulement deux valeurs : 
+    			<strong>true</strong> (<em>vrai en français</em>) ou <strong>false</strong> (<em>faux en français</em>).
+    		</li>
+    		<li>
+    			Il existe des opérateurs de comparaison qui permettent de comparer deux nombres. Ils donnent pour résultat un booléen. Les opérateurs sont les suivants
+    		</li>
+    	</ul>
+    </div>
+	</div>
+{% endblock %}

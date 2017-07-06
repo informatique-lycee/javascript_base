@@ -1,0 +1,121 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Boucle while </h3>
+			<p>
+				La notion de boucle est fondamentale en informatique.
+				Une boucle permet d'exécuter plusieurs fois des instructions qui ne sont présentes qu'une seule fois dans le code.
+			</p>
+			<p>
+				La structure de la boucle while est la suivante :
+			</p>
+			<pre><code>while (condition) {
+ instructions boucle
+}</code></pre>
+			<p>
+				Tant que la condition reste vraie, les instructions à l'intérieur du bloc (entre les 2 accolades) seront exécutées.
+			</p>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">var i=0;
+while (i&lt=10) {
+ document.write("i vaut : ");
+ document.write (i);
+ document.write('&ltbr/&gt');
+ i=i+1;
+}</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="while_1"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4> Les tables de multiplication </h4>
+			<p>
+				Écrire un programme permettant d'afficher une table de multiplication.
+				L'utilisateur entre la table qu'il désire (de 1 à 9), le programme permet alors d'afficher la table demandée.
+			</p>
+			<p>
+				Par exemple si l'utilisateur demande la table des 3, le programme devra afficher :
+			</p>
+			<p>
+				1x3=3<br/>
+				2x3=6<br/>
+				.<br/>
+				.<br/>
+				10x3=30
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="while_2"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4>Être ou ne pas être (un nombre) </h4>
+			<p>
+				Il est assez facile de provoquer une erreur dans le programme précédent. En effet, si nous saisissons une valeur qui 
+				n'est pas un nombre, notre programme va être un peu perdu. Nous allons donc améliorer notre programme 
+				 afin que tant que l'utilisateur ne saisit pas un chiffre entre un et neuf,
+				le programme doive reposer la question : "Quelle table désirez-vous (1 à 9)".
+			</p>
+			<p>
+				Pour vous aider : il existe en JavaScript une fonction très pratique : <code>isNaN()</code>  (cette méthode renvoie un booléen true ou false).
+				Le nom de cette fonction est l'acronyme de <strong>is Not a Number </strong>
+			</p>
+			<ul>
+				<li>
+					Si la variable a n'est pas de type number isNaN(a) renvoie true.
+				</li>
+				<li>
+					Si la variable a est de type number isNaN(a) renvoie false,
+				</li>
+			</ul>
+			<p>
+				 Voici un petit exemple :
+			</p>
+			<pre><code class="javascript">var a="toto"
+if (isNaN(a)){
+ document.write("La variable a n'est pas de type number")
+}
+else {
+ document.write("La variable est de type number")
+}</code></pre>
+			<p>
+				Résultat de ce programme : affichage de  "La variable a n'est pas de type number"
+			</p>
+			<p>
+				Servez vous de cette fonction <code>isNan()</code> et des opérateurs booléens pour modifier le programme et le rendre
+				plus robuste
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="while_3"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+
+	</div>
+</div>
+{% endblock %}

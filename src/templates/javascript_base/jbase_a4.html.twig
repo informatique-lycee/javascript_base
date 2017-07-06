@@ -1,0 +1,122 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Typage de variables </h3>
+			<p>
+				Les variables ne contiennent pas forcément des nombres, elles peuvent aussi "abriter" des suites de caractères, on parle alors de chaine de caractères.
+			</p>
+			<p>
+				Testez le code suivant 
+			</p>
+			<pre><code class="javascript">
+var maChaine;
+maChaine="Bonjour le monde !";
+document.write(maChaine);
+			</code></pre>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="string"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Essayer le code
+				</button>
+			</div>
+	</div>
+	<div class="cours">
+			<p>
+				Les variables peuvent donc contenir des types de donnée différents, pour l'instant nous en avons vu deux :
+			</p>
+			<ul>
+				<li>le type "nombre" (number en anglais)</li>
+				<li>le type "chaines de caractères" (string en anglais)</li>
+			</ul>
+			<p>
+				Il existe un autre type de variable (booléen) que nous verrons un peu plus tard.
+			</p>
+			<p>
+				En JavaScript les variables ont un type (number, string ou booleen),
+				mais le programmeur n'est pas obligé de préciser ce type au moment de la déclaration de la variable (avec var).
+			</p>
+			<p>
+				Il existe beaucoup de langages (C++, Java....) où l'utilisateur doit absolument définir le type d'une variable
+				avant de pouvoir l'utiliser, faute de quoi, il aura "le droit" à une erreur.
+			</p>
+			<p>
+				L'instruction "typeof"  vous permet de connaître le type d'une variable. Vous pouvez voir son utilisation dans le code
+				ci dessous.
+			</p>
+			<pre><code class="javascript">
+var a="Salut !";
+var b=567;
+var c=5.87;
+var d='42'
+document.write(typeof(a));
+document.write('&ltbr/&gt');
+document.write (typeof(b));
+document.write('&ltbr/&gt');
+document.write (typeof(c));
+document.write('&ltbr/&gt');
+document.write (typeof(d));
+			</code></pre>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="typeof"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Essayer le code
+				</button>
+			</div>
+	</div>
+	<div class="cours">		
+			<p>
+				Vous pouvez constater que les variables b et c sont toutes les deux de type "number". Vous devez savoir que dans d'autres langages (C++, Java),
+				la distinction est faite entre les entiers et les autres, pas en JavaScript.
+			</p>
+			<p>
+				Mais si une variable n'a pas de valeur ? Si on se contente de la déclarer ?
+				Écrivez un programme qui vous permettra de répondre à la question suivante :
+			</p>
+			<p>
+				<em>Quel est le type d'une variable qui a été déclarée, mais à laquelle aucune valeur n’a été attribuée ?</em>
+			</p>
+		</code></pre>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="undefined"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+	
+    </div>
+    <div class="cours conclusion">
+    	<h4> À retenir </h4>
+    	<p>
+    		Nous avons vu que les variables en javascript peuvent être de plusieurs type. Parmi ceux que nous avons vu :
+   		</p>
+   		<ul>
+   			<li>
+   				Les nombres : <strong>number</strong>
+   			</li>
+   			<li>
+   				Les chaines de caractères : <strong>string</strong>
+   			</li>
+   			<li>
+   				Les variables indéfinies : <strong>undefined</strong>
+   			</li>
+   		</ul>
+   		<p>
+   			La fonction <code>typeof()</code> retourne le type d'une variable
+   		</p>
+    </div>
+</div>
+{% endblock %}

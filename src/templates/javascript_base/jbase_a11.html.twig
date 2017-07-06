@@ -1,0 +1,235 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Fonctions </h3>
+			<p>
+				Les fonctions permettent de décomposer un programme complexe en une série de sous-programmes plus simples.
+				De plus, les fonctions sont réutilisables : si nous disposons d'une fonction capable de calculer une racine carrée,
+				par exemple, nous pouvons l'utiliser un peu partout dans notre programme sans avoir à la réécrire à chaque fois.
+			</p>
+			<p>
+				La notion de fonction en informatique est comparable à la notion de fonction en mathématiques.
+			</p>
+			<img src="ressources/javascript_base/assets/images/fct_1.jpg">
+			<p>
+				Si nous avons y = 3x+2, pour une valeur donnée de x, nous aurons une valeur de y.
+			</p>
+			<p>
+				Exemple : x=4 donc y= 14 (y = 3.4+2=14, attention ici le point correspond au signe "multiplié").
+			</p>
+			<p>
+				La fonction en informatique est basée sur la même idée :
+			</p>
+			<img src="ressources/javascript_base/assets/images/fct_2.jpg">
+			<p>
+				Voici la syntaxe employée en JavaScript (quelque soit le langage, le principe est le même),
+				la définition d'une fonction est la suivante :
+			</p>
+			<pre><code>function nomDeLaFonction (paramètre) {
+ instructions qui composent la fonction
+ return y
+}</code></pre>
+			<p>
+				La fonction retournera la valeur contenue dans la variable y.
+			</p>
+			<p>
+				Codons notre exemple (y=3x+2) en créant une fonction "fct"  :
+			</p>
+			<pre><code class="javascript">function  fct (x) {
+ y=3*x+2;
+ return y;
+}</code></pre>
+			<p>
+				Pour "utiliser" (exécuter) la fonction "fct", il suffit d'écrire :
+			</p>
+			<pre><code class="javascript">fct (4)</code></pre>
+			<p>
+				dans ce cas précis, notre fonction renverra le nombre 14
+			</p>
+			<p>
+				Il faut savoir qu'au moment de l'exécution de votre programme le code "fct(4)"
+				sera systématiquement remplacé par la valeur retournée par la fonction (toujours dans notre exemple le "fct(4)" sera remplacé par le nombre 14).
+			</p><p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">function  maFonction (x) {
+ y=3*x+2 ;
+ return y;
+}
+document.write('le résultat est : ');
+document.write(maFonction(5));</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="fonction_1"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">	
+		<h4> Plus loin dans l'écriture </h4>
+			<p>
+				Notez qu'il est possible d'écrire une fonction comme suit
+				(les 2 écritures sont, en première approche, équivalentes) :
+			</p>
+			<pre><code class="javascript">maFonction = function (x) {
+ y=3*x+2 ;
+ return y;
+}</code></pre>
+			<p>
+				Il est possible de faire passer plusieurs paramètres à une fonction.
+			</p>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">uneAutreFonction = function (x,b) {
+ y=3*x+b ;
+ return y;
+}
+document.write('le résultat est : ');
+document.write(uneAutreFonction(5,3));</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ?
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="fonction_2"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">	
+		<h4> Ce n'est pas que des maths ! </h4>
+			<p>
+				Rassurez vous, les fonctions, ce n'est pas que des maths ! On ne va pas mettre des x et des y 
+				de partout, et nul besoin d'être premier de la classe en math pour comprendre ce qui se passe.
+				Une fonction, c'est avant tout une suite d'instructions qui bricole avec les paramètres. On a utilisé
+				des nombres dans les exemples précédents. Mais les paramètres peuvent être de tout type.
+				Les paramètres peuvent par exemple être des chaînes de caractères (ainsi que la valeur retournée).
+			</p>
+			<p>
+				Considérez le programme suivant :
+			</p>
+			<pre><code class="javascript">salutations= function (nom,age) {
+	var phrase='Bonjour '+nom+' ,vous avez '+age+' ans.';
+	if ( age >= 18 ) {
+ 		phrase = phrase + " Je vois que vous êtes majeur.";
+	} else {
+		phrase = phrase + " Vous n'êtes pas encore majeur à ce que je vois !";
+	}
+ return phrase;
+}
+document.write(salutations('Adélaide',19));
+document.write('&ltbr/&gt');
+document.write(salutations('Marco',17));</code></pre>
+			<p>
+				Attention : remarquez bien les guillemets autour des paramètres toto et titi (chaines de caractères).
+			</p>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ? 
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="fonction_3"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">	
+		<h4> Une fonction muette ? </h4>			
+			<hr>
+			<p>
+				Il faut aussi savoir que la fonction ne retourne pas forcément de valeur  (le mot clé return n'est pas obligatoire). Mais si une fonction ne retourne pas de valeur, que fait-elle ?
+				Elle peut faire plein de choses, par exemple une fonction peut tout simplement afficher un texte. Reprenons l'idée du programme précédent en le modifiant un tout petit peu ..
+			</p>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">
+function  ditBonjour (nom,age) {
+	document.write ('Bonjour ');
+	document.write (nom);
+	document.write (' ,vous avez ');
+	document.write (age);
+	document.write (' ans.');
+	document.write ('&ltbr/&gt');
+	if ( age >= 18 ) {
+ 		document.write(" Je vois que vous êtes majeur.");
+	} else {
+		document.write(" Vous n'êtes pas encore majeur à ce que je vois !");
+	}
+	document.write ('&ltbr/&gt');
+}
+
+ditBonjour('Dominique',17);
+ditBonjour('Ernestine',72);</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ?
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="fonction_4"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+	</div>
+	<div class="cours">	
+		<h4> Une fonction sans paramètre ? </h4>				
+			<p>
+				Une dernière chose, les paramètres ne sont pas obligatoires, nous pouvons avoir : function maFon ( ){...} ou maFon=function(){...}.
+			</p>
+	</div>
+	<div class="cours conclusion">
+		<h4>
+			En résumé
+		</h4>
+		<p>
+			Une fonction est un bloc d'instructions que l'on peut réutiliser n'importe ou. La syntaxe de déclation de la fonction est  
+		</p>
+					<pre><code>function nomDeLaFonction(paramètre) {
+ instructions qui composent la fonction
+ return y
+}</code></pre>
+		<p>
+			Ou encore
+		</p>
+		<pre><code>nomDeLaFonction = function(paramètre) {
+ instructions qui composent la fonction
+ return y
+}</code></pre>
+		<ul>
+			<li>
+				Il peut y avoir 0, 1 ou plusieurs paramètres
+			</li>
+			<li>
+				L'instruction return renvoie une valeur à la fin de la fonction. L'instruction return est optionnelle.
+			</li>
+		</ul>
+		<p>
+			On appelle une fonction simplement à partir du nom de la fonction avec les paramètres
+		</p>	
+		<pre><code>nomDeLaFonction(paramètre)</code></pre>
+	</div>
+</div>
+{% endblock %}
+

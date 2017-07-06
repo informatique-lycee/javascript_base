@@ -1,0 +1,101 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Boucle for </h3>
+			<p>
+				Le « for » est aussi une structure très importante en programmation.
+				Comme pour l'instruction while nous avons affaire à une boucle, mais les conditions de répétitions sont un peu différentes. 
+				Il y a une instruction exécutée au début, une condition de répétition et une instruction qui est exécuté à la fin de chaque passage
+				dans la boucle.
+			</p>
+			<pre><code>for (début ; condition de répétition ; incrémentation) {
+ instructions boucle
+}</code></pre>
+			<p>
+				Soit le programme suivant :
+			</p>
+			<pre><code class="javascript">for (i=0;i&lt=10;i=i+1){
+ document.write("i vaut :");
+ document.write (i);
+ document.write('&ltbr/&gt');
+}</code></pre>
+			<p>
+				Quel est le résultat attendu après l’exécution de ce programme ?
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="for_1"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Vérifier
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4>Encore les tables de multiplication !</h4>
+			<p>
+				Écrire un programme permettant d'afficher une table de multiplication.
+				L'utilisateur entre la table qu'il désire (de 1 à 9), le programme permet alors d'afficher la table demandée.
+			</p>
+			<p>
+				Par exemple si l'utilisateur demande la table des 3, le programme devra afficher :
+			</p>
+			<p>
+				1x3=3<br/>
+				2x3=6<br/>
+				.<br/>
+				.<br/>
+				10x3=30
+			</p>
+			<p>
+				ATTENTION : Bien évidemment, votre programme devra obligatoirement utiliser une boucle « for »
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="for_2"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+		</div>
+		<div class="cours conclusion">
+			<h4> En résumé </h4>
+			<p>
+				Un deuxième type de bouce existe en javascript, la boucle for. Sa syntaxe est la suivante
+			</p>
+			<pre><code>for (début ; condition de répétition ; incrémentation) {
+ instructions boucle
+}</code></pre>				
+	</div>
+	<div class="cours alert alert-info">
+		<h4> petite remarque sur for et while</h4>
+
+				<p>
+					Les lecteurs attentifs auront remarqué que la boucle for peut être construite avec la boucle while. En effet, 
+					la syntaxe de for
+				</p>
+				<pre><code class='javascript'>for (début ; condition de répétition ; incrémentation) {
+ instructions boucle
+}</code></pre>
+				<p>
+					est équivalent à la syntaxe suivante avec while
+				</p>
+				<pre><code class='javascript'>début;
+while(condition de répétition) {
+	instructions boucle;
+	incrémentation;
+}</code></pre>
+	<p>
+		la boucle for est souvent utilisé quand il y a un compteur 
+	</p>
+	</div>
+  	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Bonjour le monde ! </h3>
+			<p>Traditionnellement, les "apprentis programmeurs" commencent leur "carrière" en écrivant un programme qui permet d'afficher à l'écran le message "Hello World !". Nous n'allons pas déroger à cette tradition.
+				En JavaScript, il suffit d'une "instruction"  pour afficher ce message (notez bien que selon le langage utilisé cela peut-être plus complexe) :
+			</p>
+			<pre><code class="javascript">
+document.write("hello world !");
+			</code></pre>
+			<p>
+				Allez y, essayer de le faire vous même en cliquant sur le bouton ci dessous
+			</p>
+			<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="hello_world"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+					À faire vous même
+			</button>
+			</div>
+	</div>
+	<div class="cours">
+		<p>
+				Bravo, vous venez d'écrire votre premier programme !
+			</p>
+			<p>
+				Nous verrons par la suite qu'il est possible d'utiliser des guillemets simples ' à la place de "
+			</p>
+   	</div>
+</div>
+{% endblock %}
+	

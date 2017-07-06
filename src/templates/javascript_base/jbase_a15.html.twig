@@ -1,0 +1,70 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Conclusion </h3>
+			<p>
+				JSFIDDLE est un très bel outil, mais il ne peut pas être utilisé pour la réalisation d'une vraie application web.
+			</p>
+			<h4>À faire vous même 15.1</h4>
+			<p>
+				Nous allons créer un fichier qui contiendra du HTML (xxxxx.html)(voir les activités consacrées au HTML5 et
+				au CSS3 pour plus d'informations).
+			</p>
+			<p>
+				À l'aide d'un éditeur de texte (Scite par exemple si vous êtes sous un système GNU/linux), créer ce nouveau fichier.
+			</p>
+			<p>
+				Sauvegardez-le en précisant son nom, par exemple index.html.
+			</p>
+			<p>
+				Écrivez le code suivant dans votre éditeur de texte (sans oublier de sauvegarder quand vous avez terminé) :
+			</p>
+			<pre><code class="html">
+&lt!doctype html&gt
+&lthtml lang="fr"&gt
+&lthead&gt
+ &ltmeta charset="utf-8"&gt
+ &lttitle&gtVoici mon site&lt/title&gt
+&lt/head&gt
+&ltbody&gt
+&lt/body&gt
+&lt/html&gt
+			</code></pre>
+			<p>Si vous avez déjà eu l'occasion d'étudier le HTML, vous reconnaîtrez la structure d'un fichier HTML. Ce fichier est la "brique" de base d'un "site internet".</p>
+			<p>C'est à partir de ce fichier que nous "appellerons" un fichier javascript afin de l'exécuter.</p>
+			<p>
+				À l'aide d'un éditeur de texte, créez un fichier JavaScript xxxx.js : par exemple monJS.js
+			</p>
+			<pre><code class="javascript">
+alert ('Le JavaScript fonctionne');
+			</code></pre>
+			<p>
+				Il nous faut ensuite associer ce fichier à notre page HTML, modifiez votre code HTML en ajoutant la ligne suivante
+				&ltscript src="monJS.js"&gt&lt/script&gt :
+			</p>
+			<pre><code class="html">
+&lt!doctype html&gt
+&lthtml lang="fr"&gt
+&lthead&gt
+ &ltmeta charset="utf-8"&gt
+ &lttitle&gtVoici mon site&lt/title&gt
+ &ltscript src="monJS.js"&gt&lt/script&gt
+&lt/head&gt
+&ltbody&gt
+&lt/body&gt
+&lt/html&gt
+			</code></pre>
+			<p>
+				Testez votre code à l'aide d'un navigateur web (Firefox ou Chrome) en “double-cliquant” sur le fichier index.html
+			</p>
+			<p>
+				Dans tous les exemples que nous venons de voir, les fichiers index.html et monJS.js se trouvent au même niveau dans l'arborescence des fichiers. Il est souvent utile de placer les fichiers JavaScript dans un dossier “JavaScript”. Il faudra alors modifier le code HTML en conséquence :
+			</p>
+			<pre><code class="html">
+&ltscript src="JavaScript/monJS.js"&gt&lt/script&gt
+			</code></pre>
+	</div>
+</div>
+{% endblock %}

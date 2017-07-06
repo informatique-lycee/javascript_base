@@ -1,0 +1,114 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Opérateurs logiques </h3>
+			<p>
+				Lorsque nous effectuons des tests, nous pouvons chercher à combiner plusieurs tests. Prenons par exemple le cas du vote. En langage naturel, 
+				nous dirions "Si une personne est de nationalité française et qu'elle a plus de 18 ans, elle peut voter à l'élection présidentielle". On a 
+				bien là deux tests qui sont effectués
+			</p>
+			<p>
+				Cette combinaison de tests est particulièrement intéressante dans le cas de branchements conditionnels avec if, pour mettre plusieurs conditions
+			</p>
+			<pre><code>si (condition1 op_logique condition2 ) {
+ suite_instruction1
+}
+sinon {
+ suite_instruction2
+}</code></pre>
+			<p>
+				« op_logique » étant un opérateur logique.
+			</p>
+			<p>
+				Nous allons étudier 2 opérateurs logiques : le «ou» (noté en JavaScript ||) et le «et» (noté en JavaScript &&)
+			</p>
+			<p>
+				Par exemple (condition1 || condition2) est vrai si condition1 est vrai ou condition2 est vrai
+			</p>
+			<p>
+				Autre exemple (condition1 && condition2) est faux si condition1 est vrai et condition2 est faux
+			</p>
+			<p>
+				Les résultats peuvent être regroupés dans ce que l'on appelle une table de vérité :
+			</p>
+			
+			<div class="well well-sm">
+				<h4>table de vérité pour le ou</h4>
+				<table class='table table-striped'>	
+					<thead>
+						<tr>
+							<th>condition1</th>
+							<th>condition2</th>
+							<th>condition1 || condition2</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>vrai</td>
+							<td>vrai</td>
+							<td>vrai</td>
+						</tr>
+						<tr>
+							<td>vrai</td>
+							<td>faux</td>
+							<td>vrai</td>
+						</tr>
+						<tr>
+							<td>faux</td>
+							<td>vrai</td>
+							<td>vrai</td>
+						</tr>
+						<tr>
+							<td>faux</td>
+							<td>faux</td>
+							<td>faux</td>
+						</tr>
+
+					</tbody>
+
+				</table>
+			</div>
+			
+			<div class="well well-sm">
+				<h4>table de vérité pour le et</h4>
+				<table class='table table-striped'>					
+					<thead>
+					<tr>
+						<th>condition1</th>
+						<th>condition2</th>
+						<th>condition1 && condition2</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>vrai</td>
+						<td>vrai</td>
+						<td>vrai</td>
+					</tr>
+					<tr>
+						<td>vrai</td>
+						<td>faux</td>
+						<td>faux</td>
+					</tr>
+					<tr>
+						<td>faux</td>
+						<td>vrai</td>
+						<td>faux</td>
+					</tr>
+					<tr>
+						<td>faux</td>
+						<td>faux</td>
+						<td>faux</td>
+					</tr>
+				</tbody>
+
+				</table>
+			</div>
+			<p>
+				Nous aurons l'occasion d'utiliser ces opérateurs logiques dans la prochaine activité.
+			</p>
+	</div>
+</div>
+{% endblock %}

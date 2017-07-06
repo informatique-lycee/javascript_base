@@ -1,0 +1,118 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Portée des variables </h3>
+		<p>
+			Soit le programme suivant :
+		</p>
+		<pre><code class='javascript'>function mafon(){
+var i=10;
+}
+mafon();
+document.write("La valeur de i est : "+i);</code></pre>
+		<p>
+			À votre avis, que va afficher ce programme ? 
+		</p>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="portee_1"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				Vérifier
+			</button>
+		</div>
+	</div>
+	<div class="cours">
+		<h4>Ce n'est pas la variable que vous cherchez</h4>
+		<p>
+			Cela ne fonctionne pas ! Si l'on utilisait un outil de débogage type "firebug" ou la "console JavaScript", vous constaterez que le système nous renvoi une erreur : «ReferenceError: i is not defined », étrange, non ? i est bien défini dans la fonction mafon ?
+		</p>
+		<p>
+			En fait non, cela est tout à fait normal :
+			Dans la plupart des langages, une variable définie dans une fonction est utilisable uniquement dans cette fonction. En dehors de cette fonction, la variable n'existe pas ! On dit que la variable ne "porte" pas au dela de la fonction.
+		</p>
+		<p>
+			Une variable définie dans une fonction est appelée variable locale. On dit encore une varibale de portée locale.
+		</p>
+	</div>
+	<div class="cours">
+		<h4> Tu me vois, tu ne me vois plus !</h4>
+		<p>
+			Plus fort encore. Considérons le code ci dessous où la variable i est défini à l'extérieur de la fonction. On dit que la variable
+			i est <strong>globale</strong>. Si nous redéfinissons une variable i dans la fonction, pendant toute la durée de l'éxécution de la fonction,
+			cette variable i sera celle de la fonction. Un peu comme si c'était la variable "i de la fonction". Une fois la fonction terminée, on retrouve 
+			la variable i initiale.
+		</p>
+		<pre><code class="javascript">var i=0;
+
+function mafon(){
+    var i=10;
+	document.write("La valeur de i dans la fonction est : "+i+"&lt;br&gt;");
+}
+
+mafon();
+document.write("La valeur de i une fois ressorti est : "+i);</code></pre>
+		<p>
+			Dans la fonction, i vaut 10 (c'est le i de la fonction), mais après l'éxécution de la fonction, i reprend sa valeur 
+			de 0. 
+		</p>
+		<p>
+			Et si i n'était pas redéfini dans la fonction ? Vous allez reprendre le code précédent et supprimer le mot clef 
+			<code>var</code> dans la fonction, qui sert à définir une variable. Que se passe t'il ?
+		</p>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="portee_2"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				À faire vous même
+			</button>
+		</div>
+	</div>
+	<div class="cours">
+		<h4> local contre global </h4>
+		<p>
+			Que s'est il passé ? Lorsque la fonction a été exécutée, l'interpréteur Javascript n'a pas trouvé de variable i déclarée dans la fonction.
+			Il a donc cherché une variable i définie globalement. Il en a trouvé une. Le i qui s'est vu affecter la valeur 10 est donc la variable i globale
+			puisqu'il n'y en avait pas de locale.
+		</p>
+		<p>
+			La variable i définit au début est de portée globale, ou pour faire plus simple, globale.
+		</p>
+		<p>
+			<em>Sachez que dans certains langages de programmation, il faut déclarer explicitement les variables qui sont globales.</em>
+		</p>
+	</div>
+	<div class="cours remarque">
+		<p>
+			Sachez que lorsque les projets prennent de l'envergure, on considère souvent que l'utilisation de variables globale est une mauvais chose. Si
+			une fonction doit avoir accès à des informations, il vaut mieux les passer en paramètre.
+		</p>
+	</div>
+	<div class="cours conclusion">
+		<p>
+			Une variable a une portée qui est limitée au lieu de sa définition
+		</p>
+		<ul>
+			<li>
+				Une variable définie à l'extérieur des fonctions existe dans tout le programme. On parle de variable
+				globale.
+			</li>
+			<li>
+				Une variable définie à l'intérieur d'une fonction n'existe que dans cette fonction. On parle d'une variable 
+				locale.
+			</li>
+		</ul>
+		<p>
+			Quand javascript doit travailler avec une variable, il cherche d'abord une variable locale avec ce nom. S'il n'en trouve pas,
+			il en cherche une globale. Et s'il n'y en pas non plus, il produit une erreur.
+		</p>
+	</div>
+</div>
+{% endblock %}

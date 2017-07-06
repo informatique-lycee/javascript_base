@@ -1,0 +1,134 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Acquérir des variables </h3>
+			<p>
+				Ne trouvez-vous pas que pour l'instant cela manque un peu d'interactivité ? En effet, l'utilisateur de vos programmes est plutôt passif !
+			</p>
+			<p>
+				La fonction <code>prompt()</code> va permettre aux utilisateurs de rentrer des données. Elle fera "surgir" une fenêtre qui permettra 
+				de saisir une valeur.
+			</p>
+			<div class='alert alert-danger'>
+				<p>
+				<strong>Attention :</strong> Les bonnes pratiques du JavaScript (et des technos web en général) exigent d'éviter autant que possible les "fenêtres surgissantes".
+				Nous les utiliserons provisoirement et uniquement dans un but "pédagogique".
+			</p>
+		</div>
+			<p>
+				Si on utilise le code suivant
+			</p>
+			<pre><code class="javascript">var age;
+age=prompt("Quel est votre âge ?");</code></pre>
+			<p>
+				La variable age va contenir la réponse entrée au clavier par l'utilisateur.
+			</p>
+			<p>
+				Écrivez un programme qui demande son prénom à l'utilisateur puis l'affiche sous la forme "bonjour, Toto" (si Toto est le prénom entré par l'utilisateur !)
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="prompt"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même.
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<hr>
+			<h4>Avec des nombres</h4>
+			<p>
+				Vous allez maintenant faire la même chose avec des nombres. Écrivez un programme qui demande à l'utilisateur d'entrer 2 nombres et affiche le résultat de l'addition de ces 2 nombres.
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="promptNb"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					À faire vous même.
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4> Cette variable n'est pas mon type ... </h4>
+			<p>
+				Problème avec le programme écrit précédemment : si l'utilisateur entre 25 puis 12 le résultat affiché est 2512 !
+			</p>
+			<p>
+				Avez-vous une idée du problème ?
+			</p>
+			<p>
+				Pour vous aider dans votre recherche, modifiez le programme écrit de la section précédente afin qu'il affiche le type de a et le type de b.
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="promptNb"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Rouvrir l'éditeur.
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4>transtypage manuel</h4>
+			<p>
+				Alors ?
+			</p>
+			<p>
+				Les valeurs obtenues grâce à la méthode prompt sont forcément de type string. Nous avons donc ici une concaténation et non pas une addition.
+			</p>
+			<p>
+				La fonction <code>parseInt()</code> permet de convertir une variable de type string en une variable de type number (il existe l'équivalent pour les nombres décimaux : parseFloat)
+			</p>
+			<pre><code class="javascript">a=parseInt(b)</code></pre>
+			<p>
+				(avec b de type string et a de type number)
+			</p>
+			<p>
+				il est aussi possible d'écrire directement :
+			</p>
+			<pre><code class="javascript">a=parseInt(a);</code></pre>
+			<p>
+				Voire même, si vous voulez saisir un nombre entier 
+			</p>
+			<pre><code class="javascript">a=parseInt(prompt('donnez un nombre entier');</code></pre>
+			<p>
+				Rouvrir une dernière fois l'éditeur pour terminer le programme demandé
+			</p>
+			<div class="essais">
+				<button type="button"
+					class="btn btn-success" 
+					data-toggle="modal" 
+					data-script="promptNb"
+					data-activite="javascript_base"
+					data-target="#JavascriptModal" >
+					Rouvrir l'éditeur.
+				</button>
+			</div>
+    </div>
+    <div class="cours conclusion">
+    	<h4> À retenir </h4>
+    	<ul>
+    		<li>
+    			On peut poser une question à l'utilisateur en utilisant la fonction <code>prompt()</code>
+    		</li>
+    		<li>
+    			La variable retournée par prompt est toujours une chaine de caractères
+    		</li>
+    		<li>
+    			On peut transformer un nombre stocké dans une chaine de caractère avec la fonction <code>parseInt()</code> pour 
+    			un entier et la fonction <code>parseFloat()</code> pour un nombre décimal.
+    		</li>
+    	</ul>
+    </div>
+</div>
+{% endblock %}

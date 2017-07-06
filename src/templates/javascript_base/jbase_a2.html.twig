@@ -1,0 +1,140 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Variables </h3>
+			<p>
+				Définition du mot ordinateur d'après "Le Petit Larousse" :
+			</p>
+			<p>
+				<i>Machine automatique de traitement de l'information, obéissant à des programmes formés par des suites d'opérations arithmétiques et logiques.</i>
+			</p>
+			<p>
+				Qui dit "traitement de l'information", dit donc données à manipuler. Un programme "passe" donc son temps à traiter des données. Pour pouvoir traiter ces données, l'ordinateur doit les ranger dans sa  mémoire (RAM Random Access Memory).
+				La RAM  se compose de cases dans lesquelles nous allons ranger ces données (une donnée dans une case). Chaque case a une adresse (ce qui permet au processeur de savoir où sont rangées les données).
+			</p>
+			<p>
+				Alors, qu'est-ce qu’une variable ?
+			</p>
+			<p>
+				Eh bien, c'est une petite information (une donnée) temporaire que l'on stocke dans une case de la
+				RAM. On dit qu'elle est "variable" car c'est une valeur qui peut changer pendant le déroulement du
+				programme.
+			</p>
+			<p>
+				Une variable est constituée de 2 choses :
+			</p>
+			<ul>
+				<li>Elle a une valeur : c'est la donnée qu'elle stocke (par exemple le nombre 5)</li>
+				<li>Elle a un nom : c'est ce qui permet de la reconnaître. Nous n'aurons pas à retenir l'adresse de
+					mémoire, nous allons juste indiquer des noms de variables à la place.</li>
+			</ul>
+			<p>
+				En JavaScript on utilise l'instruction var pour déclarer une variable (on réserve une case en mémoire et on donne un nom à notre variable).
+			</p>
+			<pre><code class="javascript">
+var i;
+			</code></pre>
+			<p>
+				nous permet de déclarer une variable qui a pour nom i (il est possible et même conseillé de donner des noms plus longs aux variables (var point_de_vie; par exemple).
+
+			</p>
+			<p>
+				Une fois notre variable déclarée, nous pouvons lui attribuer une valeur :
+			</p>
+			<pre><code class="javascript">
+i=12;
+			</code></pre>
+			<p>
+				Une petite remarque au passage : en JavaScript, chaque ligne se termine par un point-virgule (ce n'est pas une obligation mais c'est fortement conseillé).
+			</p>
+			<p>
+				Cliquez sur le bouton ci dessous pour savoir ce que va faire le code suivant
+			</p>
+
+			<pre><code class="javascript">
+var point_de_vie ;
+point_de_vie = 15;
+document.write (point_de_vie);
+			</code></pre>
+						<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="variable_1"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+</div>
+<div class="cours">
+		<h4> Une variable ou son ombre ? </h4>
+			<p>
+				Comme vous pouvez le constater, document.write permet d'afficher la valeur contenue dans la variable point_de_vie.
+			</p>
+			<p>
+				Et si maintenant nous mettons :
+			</p>
+			<pre><code class="javascript">
+document.write ("point_de_vie");
+			</code></pre>
+			<p>
+				à la place de :
+			</p>
+			<pre><code class="javascript">
+document.write (point_de_vie);
+			</code></pre>
+			<p>
+				Que va-t-il se passer ? Testez votre réponse en cliquant sur le bouton ci dessous
+			</p>
+			<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="variable_2"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+		</div>
+		<div class="cours">
+			<h4> Faire son petit programme </h4>
+			<p>
+				Remarquez qu'il est tout à fait possible de déclarer une variable et de lui attribuer une valeur dans la foulée :
+			</p>
+			<pre><code class="javascript">
+var point_de_vie=15;
+			</code></pre>
+			<hr>
+			<p>
+				Vous aller maintenant écrire un programme dans lequel on déclare une variable pointDeForce, on lui attribue ensuite la valeur 12.
+				Pour terminer, la valeur de pointDeForce doit s'afficher à l'écran.
+			</p>
+			<p>
+				Allez y en cliquant sur le bouton ci dessous
+			</p>
+						<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="variable_3"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+					À faire vous même
+				</button>
+			</div>
+	</div>
+	<div class="cours conclusion">
+		<h4>À retenir</h4>
+		<p>
+			Vous avez vu qu'en javascript, une variable se déclare avec le mot clef <code>var</code>
+			et qu'on affecte une valeur à la variable avec le signe =. Les deux peuvent se faire en même temps
+			<pre><code class='javascript'>var points=12;</code></pre>
+		</p>
+	</div>
+</div>
+{% endblock %}
+	

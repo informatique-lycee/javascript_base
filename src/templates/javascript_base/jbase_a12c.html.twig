@@ -1,0 +1,152 @@
+{% extends 'cours.html.twig' %}
+
+{% block main %}
+<div class="row">
+	<div class="cours">
+		<h3> Tableaux : parcourir </h3>
+		<h4> En bouclant</h4>
+		<p>
+			Un tableau stocke des informations. On souhaite souvent le parcourir pour 
+			traiter l'ensemble des informations, en les affichant par exemple. La première méthode qui vient 
+			à l'esprit est d'utiliser une boucle.
+		</p>
+		<p>
+			Soit le programme suivant :
+		</p>
+		<pre><code class="javascript">var semaine=['lundi','mardi','mercredi','jeudi','vendredi'] ;
+for (i=0; i&lt;semaine.length; i=i+1){
+	document.write (semaine[i]);
+	document.write('&lt;br&gt;');
+}</code></pre>
+		<p>
+			Quel est le résultat attendu après l’exécution de ce programme ?
+		</p>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_c1"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				Vérifier
+			</button>
+		</div>
+	</div>
+	<div class="cours">
+		<h4> Avec la méthode foreach </h4>
+		<p>
+			Les tableaux en javascript, nous l'avons déjà dit, sont des objets qui ont certaines
+			fonctions qui leur sont associées, que l'on appelle des méthodes
+			(comme <code>push()</code> ou <code>pop()</code>). Il existe une méthode qui permet de parcourir
+			tout un tableau et de réaliser une action sur chaque élément. Voici la syntaxe
+		</p>
+		<pre><code class="javascript">monTableau.forEach(fonction_a_appliquer(arguments))</code></pre>
+		<p>
+			La fonction à appliquer pourra avoir de un à trois paramètres qui seront dans l'ordre
+		</p>
+		<ul>
+			<li>
+				L'élément en cours dans le parcours
+			</li>
+			<li>
+				l'indice de l'élément en cours
+			</li>
+			<li>
+				le tableau
+			</li>
+		</ul>
+		<p>
+			Regardons les exemples suivants pour mieux comprendre. Tout d'abord réécrivons le programme 
+			précédent avec <code>forEach()</code>
+		</p>
+		<pre><code class="javascript">var semaine=['lundi','mardi','mercredi','jeudi','vendredi'] ;
+semaine.forEach(function(e){
+	document.write (e+"&lt;br&gt;");
+});</code></pre>
+		<p>
+			Le code ci dessus demande une petite explication. Tout d'abord, on voit le mot clef <code>function</code>
+			sans avoir un nomb associé. C'est ce que l'on appelle une fonction anonyme. On l'utilise pour décrire une 
+			fonction qui n'a pas besoin de recevoir un nom par ce qu'elle ne va pas être utilisée en dehors de ce contexte.
+			On aurait pu "nommer" la fonction mais le code aurait été plus long. En version plus "compréhensible", le code aurait été 
+			le suivant 
+		</p>
+		<pre><code class="javascript">var semaine=['lundi','mardi','mercredi','jeudi','vendredi'] ;
+
+function afficheElement(element) {
+	document.write(element);
+	document.write("&lt;br&gt;");
+}
+
+// Appel de cette fonction pour chaque élément du tableau
+semaine.forEach(afficheElement);</code></pre>
+	<p>
+		Si l'on voulait afficher le numéro du jour de la semaine en plus, on aurait besoin du numéro 
+		de l'indice courant dans le tableau, auquel on rajoute 1 (pour commencer à 1 et pas à 0.
+		le code serait le suivant  
+	</p>
+	<pre><code class="javascript">var semaine=['lundi','mardi','mercredi','jeudi','vendredi'] ;
+semaine.forEach(function(e,i){
+	document.write("le jour numéro ");
+	document.write(i+1);
+	document.write(" est le "+e+"&lt;br&gt;");
+});</code></pre>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_c2"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				Essayer le code
+			</button>
+		</div>
+	</div>
+	<div class="cours">
+		<h4> Un exemple un peu plus complexe </h4>
+		<p>
+			Un dernier exemple un peu plus complexe. Voici un programme pour faire un tableau avec les nombres premiers de 1 à nMax,
+			ou nMax est fixé dans l'exemple à 1000.
+		</p>
+		<p>
+			Deux petits rappel : un nombre premier est un nombre qui n'est divisible que par 1 ou par lui même. Pour savoir si un nombre est
+			premier, nul besoin d'essayer de le diviser par tous les nombres plus petit que lui. Il suffit d'essayer les nombres
+			premiers plus petits que lui.
+		</p>
+		<p>
+			Second rappel. L'opérateur modulo noté <code>%</code> done le reste de la division entière. Et un nombre a est divisible par b si ... 
+			le reste de la division entière est 0.
+		</p>
+		<p>
+			L'objectif est d'analyser le programme ligne par ligne pour le comprendre
+		</p>
+		<pre><code class='javascript'>var premiers=[2];
+var nMax = 1000;
+
+for (var n=3; n&lt;nMax+1 ; n++) {
+	var estPremier = true;
+	premiers.forEach(function(e){
+		if ( n%e == 0 ) { estPremier = false;}
+	});
+	if (estPremier) {
+		premiers.push(n);
+	}
+}
+
+// Affichage
+document.write("Liste des nombres premiers de 1 à "+nMax+" : &lt;br&gt;");
+premiers.forEach(function(e){
+	document.write(e+" ");
+});</code></pre>
+		<div class="essais">
+			<button type="button"
+				class="btn btn-success" 
+				data-toggle="modal" 
+				data-script="array_c3"
+				data-activite="javascript_base"
+				data-target="#JavascriptModal" >
+				Essayer le code
+			</button>
+		</div>
+	</div>
+</div>
+{% endblock %}
