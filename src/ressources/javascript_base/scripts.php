@@ -69,13 +69,15 @@ $examples_scripts=array(
         "title"=>'Incrémentation',
         "files"=>array(
             "html"=>"ressources/common/assets/examples/html/default.html",
-        "css"=>"ressources/common/assets/examples/css/empty.css",
-        "javascript"=>"ressources/javascript_base/assets/examples/javascript/operations_2.js"
+            "css"=>"ressources/common/assets/examples/css/empty.css",
+            "javascript"=>"ressources/javascript_base/assets/examples/javascript/operations_2.js"
         ),
-      "activeEditor"=>"javascript",
-        "editors"=>array("javascript"=>true,
-        "css"=>false,
-        "html"=>false)),
+        "activeEditor"=>"javascript",
+        "editors"=>array(
+            "javascript"=>true,
+            "css"=>false,
+            "html"=>false)
+        ),
     'string'=>array(
         "title"=>'Les chaines de caractères',
         "files"=>array(
